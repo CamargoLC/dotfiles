@@ -1,7 +1,9 @@
 #!/bin/sh
 
-# Gera as opções e captura a escolha usando a interface do Rofi
-escolha=$(printf "Desligar\nReiniciar\nSair" | rofi -dmenu -i -p "Energia")
+# Injeção de design direto no comando para centralizar e esconder a barra de pesquisa
+override='entry { enabled: false; } element-text { horizontal-align: 0.5; } listview { lines: 3; }'
+
+escolha=$(printf "Desligar\nReiniciar\nSair" | rofi -dmenu -i -p "Energia" -theme-str "$override")
 
 # Executa o comando baseado na seleção
 case "$escolha" in
