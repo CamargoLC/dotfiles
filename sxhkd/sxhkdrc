@@ -135,3 +135,15 @@ Print
 # Flameshot (Shift + Print = Área de Seleção Gráfica)
 shift + Print
 	flameshot gui
+
+# ==========================================
+# Hardware: Áudio & Brilho
+# ==========================================
+XF86Audio{Raise,Lower}Volume
+    pactl set-sink-volume @DEFAULT_SINK@ {+5%,-5%}
+
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+XF86MonBrightness{Up,Down}
+    brightnessctl set {+5%,5%-}
