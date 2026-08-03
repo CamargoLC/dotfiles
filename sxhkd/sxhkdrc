@@ -1,149 +1,105 @@
-#
-# wm independent hotkeys
-#
-
-# terminal emulator
+# ==========================================
+# 1. SISTEMA E LANÇADORES
+# ==========================================
 super + Return
-	alacritty
+    alacritty
 
-# Lançador de Aplicativos (Rofi)
 super + d
-	rofi -show drun
+    rofi -show drun
 
-# Menu de Energia (Rofi)
 super + shift + e
-	~/.config/rofi/powermenu.sh	
+    ~/.config/rofi/powermenu.sh
 
-# --- Memória Muscular do i3wm ---
-
-# Matar a janela de foco
-super + shift + q
-	bspc node -c
-
-# Alternar modo fluante (floating)
-super + shift + space
-	bspc node -t "~"floating
-
-# Recarregar o ambiente (bspwm e sxhkd)
 super + shift + r
-	bspc wm -r && pkill -USR1 -x sxhkd
+    bspc wm -r && pkill -USR1 -x sxhkd
 
-# close and kill
-super + {_,shift + }w
-	bspc node -{c,k}
+# ==========================================
+# 2. GERENCIAMENTO DE JANELAS E ESTADOS
+# ==========================================
+# Fechar/Matar janela (Q = Memória i3wm | W = Padrão bspwm)
+super + {shift + q,w,shift + w}
+    bspc node -{c,c,k}
 
-# alternate between the tiled and monocle layout
-super + m
-	bspc desktop -l next
+# Alternar estados (Tiled, Pseudo, Floating, Fullscreen, Float Toggle)
+super + {t,shift + t,s,f,shift + space}
+    bspc node -t {tiled,pseudo_tiled,floating,fullscreen,"~"floating}
 
-# send the newest marked node to the newest preselected node
-super + y
-	bspc node newest.marked.local -n newest.!automatic.local
+# Layout Monocle (Maximizado) / Troca com a maior janela
+super + {m,g}
+    {bspc desktop -l next,bspc node -s biggest.window}
 
-# swap the current node and the biggest window
-super + g
-	bspc node -s biggest.window
-
-#
-# state/flags
-#
-
-# set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
-
-# set the node flags
+# Flags de janela (Marked, Locked, Sticky, Private)
 super + ctrl + {m,x,y,z}
-	bspc node -g {marked,locked,sticky,private}
+    bspc node -g {marked,locked,sticky,private}
 
-#
-# focus/swap
-#
-
-# focus the node in the given direction
+# ==========================================
+# 3. FOCO E NAVEGAÇÃO (VIM-LIKE & WORKSPACES)
+# ==========================================
+# Focar ou mover janela na direção (H J K L)
 super + {_,shift + }{h,j,k,l}
-	bspc node -{f,s} {west,south,north,east}
+    bspc node -{f,s} {west,south,north,east}
 
-# focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
-
-# focus the next/previous window in the current desktop
-super + {_,shift + }c
-	bspc node -f {next,prev}.local.!hidden.window
-
-# focus the next/previous desktop in the current monitor
-super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
-
-# focus the last node/desktop
-super + {grave,Tab}
-	bspc {node,desktop} -f last
-
-# focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
-
-# focus or send to the given desktop
+# Focar ou mover janela para o Workspace (1-0)
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+    bspc {desktop -f,node -d} '^{1-9,10}'
 
-#
-# preselect
-#
+# Focar em janelas relativas (Próxima/Anterior/Pai/Irmão)
+super + {_,shift + }c
+    bspc node -f {next,prev}.local.!hidden.window
+    
+super + {p,b,comma,period}
+    bspc node -f @{parent,brother,first,second}
 
-# preselect the direction
+# Alternar Desktops e Histórico
+super + bracket{left,right}
+    bspc desktop -f {prev,next}.local
+
+super + {grave,Tab}
+    bspc {node,desktop} -f last
+
+# ==========================================
+# 4. PRÉ-SELEÇÃO DE ÁREA (SPLITS)
+# ==========================================
+# Direção e Proporção (Ratio)
 super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
+    bspc node -p {west,south,north,east}
 
-# preselect the ratio
 super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
+    bspc node -o 0.{1-9}
 
-# cancel the preselection for the focused node
-super + ctrl + space
-	bspc node -p cancel
+# Cancelar pré-seleção (Focada / Todas no Desktop)
+super + ctrl + {_,shift + }space
+    {bspc node -p cancel,bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel}
 
-# cancel the preselection for the focused desktop
-super + ctrl + shift + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
-
-#
-# move/resize
-#
-
-# expand a window by moving one of its side outward
+# ==========================================
+# 5. REDIMENSIONAMENTO E MOVIMENTO
+# ==========================================
+# Expandir
 super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
-# contract a window by moving one of its side inward
+# Contrair
 super + alt + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-# move a floating window
+# Mover janela flutuante com as setas
 super + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
-
-# --- Utilitários Táticos ---
-
-# Flameshot (Print = Captura de Tela Inteira)
-Print
-	flameshot full -c
-
-# Flameshot (Shift + Print = Área de Seleção Gráfica)
-shift + Print
-	flameshot gui
+    bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # ==========================================
-# Hardware: Áudio & Brilho
+# 6. UTILITÁRIOS E HARDWARE
 # ==========================================
+# Captura de Tela (Flameshot: Inteira / Área de Seleção)
+{_,shift + }Print
+    flameshot {full -c,gui}
+
+# Controle de Áudio
 XF86Audio{Raise,Lower}Volume
     pactl set-sink-volume @DEFAULT_SINK@ {+5%,-5%}
 
 XF86AudioMute
     pactl set-sink-mute @DEFAULT_SINK@ toggle
 
+# Brilho da Tela (Acer Nitro 5)
 XF86MonBrightness{Up,Down}
     brightnessctl set {+5%,5%-}
