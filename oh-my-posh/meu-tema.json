@@ -1,0 +1,65 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "final_space": true,
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "session",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "background": "#D05E3D",
+          "foreground": "#FFFFFF",
+          "template": "  {{ .UserName }} "
+        },
+        {
+          "type": "path",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "background": "#D79921",
+          "foreground": "#FFFFFF",
+          "properties": {
+            "style": "folder"
+          },
+          "template": " {{ .Path }} "
+        },
+        {
+          "type": "text",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "background": "#689D6A",
+          "foreground": "#FFFFFF",
+          "template": " "
+        },
+        {
+          "type": "time",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "background": "#3C3836",
+          "foreground": "#EBDBB2",
+          "properties": {
+            "time_format": "15:04"
+          },
+          "template": " \uf017 {{ .CurrentDate | date .Format }} "
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "background": "transparent",
+          "foreground": "#98971A",
+          "template": "➔ "
+        }
+      ]
+    }
+  ]
+}
