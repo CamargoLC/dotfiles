@@ -2,13 +2,17 @@
 # dotfiles
 Welcome at my Void.
 
-## 💻 Core Architecture
-* **Window Manager:** i3wm e bspwm
-* **Terminal:** Alacritty
-* **Shell:** Bash + Oh-My-Posh
-* **Editor:** Neovim
-* **Launcher / Powermenu:** Rofi
-* **Compositor:** Picom
+## 💻 Configuração
+* **Window Manager:** i3wm ou bspwm
+* **Terminal:** alacritty
+* **Shell:** bash + oh-my-posh (shell prompt para o terminal)
+* **Editor:** neovim
+* **Launcher / Powermenu:** rofi
+* **Compositor:** picom
+* **Barra de status:** polybar
+* **Teclas de atalho:** sxhkd
+* **Wallpaper Manager:** feh
+* **Informações do Sistema:** fastfetch + btop
 
 > "Enter into the Void."
 
