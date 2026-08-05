@@ -22,6 +22,6 @@ Welcome at my Void.
 
 ![Monitoramento de sistema com btop e tty-clock](assets/screenshots/rice_voidlinux2.png)
 
-![Fastfetch e Gerenciador de Arquivos](assets/screenshots/rice_voidlinux3.png)
+![Fastfetch e Gerenciador de Arquivos](assets/screenshots/rice_voidlinux3_att.png)
 
 ![Configurações do terminal no Neovim](assets/screenshots/rice_voidlinux4.png)
