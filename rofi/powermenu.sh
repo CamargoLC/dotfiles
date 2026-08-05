@@ -1,35 +1,50 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-# Injeções de design tático para os painéis
-override_main='entry { enabled: false; } element-text { horizontal-align: 0.0; } listview { lines: 4; }'
-override_conf='entry { enabled: false; } element-text { horizontal-align: 0.0; } listview { lines: 2; }'
+# Ícones Táticos
+lock=""
+logout=""
+reboot=""
+shutdown=""
 
-# Função de interceptação (Gatilho de Confirmação)
-confirmar() {
-    # O $1 é o nome da ação que aparece no título do Rofi (ex: "Desligar?")
-    resposta=$(printf "Sim\nNão" | rofi -dmenu -i -p "$1?" -theme-str "$override_conf")
+# Opções do menu lateral principal
+options="$lock\n$logout\n$reboot\n$shutdown"
+
+# Chamada do Rofi principal
+chosen="$(echo -e "$options" | rofi -dmenu -i -theme /mnt/meu_hd/dotfiles/rofi/powermenu.rasi)"
+
+# A Barreira de Segurança Coesa
+confirm_action() {
+    local yes=""
+    local no=""
     
-    if [ "$resposta" = "Sim" ]; then
-        # Se confirmado, executa o comando guardado no $2
-        eval "$2"
+    # Chama o Rofi usando a MESMA matriz lateral para manter o visual 100% idêntico
+    local choice="$(echo -e "$yes\n$no" | rofi -dmenu -i -theme /mnt/meu_hd/dotfiles/rofi/powermenu.rasi)"
+    
+    if [[ "$choice" == "$yes" ]]; then
+        return 0
+    else
+        return 1
     fi
 }
 
-# 1. Painel Principal
-escolha=$(printf "Bloquear\nDesligar\nReiniciar\nSair" | rofi -dmenu -i -p "Energia" -theme-str "$override_main")
-
-# 2. Direcionamento lógico
-case "$escolha" in
-    "Bloquear") 
-        slock 
+# Execução Lógica 
+case $chosen in
+    $shutdown)
+        if confirm_action; then
+            alacritty -e sudo init 0
+        fi
         ;;
-    "Desligar") 
-        confirmar "Desligar" "alacritty -e sudo init 0" 
+    $reboot)
+        if confirm_action; then
+            alacritty -e sudo reboot
+        fi
         ;;
-    "Reiniciar") 
-        confirmar "Reiniciar" "alacritty -e sudo reboot" 
+    $lock)
+        slock
         ;;
-    "Sair") 
-        confirmar "Sair" "bspc quit" 
+    $logout)
+        if confirm_action; then
+            bspc quit
+        fi
         ;;
 esac

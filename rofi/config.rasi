@@ -1,79 +1,109 @@
+/**
+ * ROFI CONFIGURATION - THE ULTIMATE NORD GRID
+ * Motor: Aditya Shakya | Cores: LR-Tech (Nord) | Design: Grid Layout
+ **/
+
 configuration {
-    modi: "drun,run";
+    modi: "drun,run,window";
     show-icons: true;
-    font: "JetBrainsMono Nerd Font 10";
-    display-drun: "Apps";
+    icon-theme: "Papirus";
+    display-drun: ""; /* Ícone de Lupa - requer Nerd Font */
     drun-display-format: "{name}";
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+    window-format: "{w} · {c} · {t}";
 }
 
 * {
-    /* Paleta Nord */
-    bg0: #2E3440;
-    bg1: #3B4252;
-    fg0: #ECEFF4;
-    accent: #88C0D0;
-
-    background-color: transparent;
-    text-color: @fg0;
-    margin: 0;
-    padding: 0;
+    /* Paleta Nord Tática */
+    bg-dark:            #2e3440;
+    bg-light:           #3b4252;
+    nord-blue:          #81a1c1;
+    nord-light:         #eceff4;
+    nord-grey:          #d8dee9;
+    
+    font:               "IBM Plex Mono 11";
+    background-color:   transparent;
+    text-color:		#ffffff;
 }
 
 window {
-    width: 300px;
-    background-color: @bg0;
-    border: 3px solid;
-    border-color: @accent;
-    border-radius: 9px;
-    padding: 10px;
+    width:              360px;
+    border:             2px;
+    border-color:       @nord-blue;
+    border-radius:      15px;
+    background-color:   @bg-dark;
+    padding:            15px;
 }
 
 mainbox {
-    children: [inputbar, listview];
+    spacing:            20px;
+    children:           [ inputbar, listview ];
 }
 
 inputbar {
-    background-color: @bg1;
-    border-radius: 5px;
-    padding: 8px;
-    children: [prompt, entry];
+    spacing:            15px;
+    padding:            15px 20px;
+    border-radius:      15px;
+    background-color:   @bg-light;
+    text-color:         @nord-light;
+    children:           [ prompt, entry ];
 }
 
 prompt {
-    text-color: @accent;
-    padding: 0 8px 0 0;
+    text-color:         @nord-blue;
+    vertical-align:     0.5;
+    font:               "IBM Plex Mono 14";
 }
 
 entry {
-    placeholder: "Buscar...";
-    placeholder-color: #4C566A;
+    placeholder:        "Buscar Aplicações...";
+    placeholder-color:  @nord-grey;
+    text-color:         @nord-light;
+    vertical-align:     0.5;
 }
 
 listview {
-    lines: 6;
-    padding: 10px 0 0 0;
+    columns:            3;
+    lines:              3;
+    spacing:            10px;
+    fixed-height:       true;
+    fixed-columns:      true;
 }
 
-element normal.normal,
-element alternate.normal {
-    background-color: transparent;
-    text-color: @fg0; 
+element {
+    orientation:        vertical;
+    padding:            10px 5px;
+    border-radius:      10px;
+    text-color:         @nord-light;
 }
 
-element selected {
-    background-color: @bg1;
-    border: 1px solid;
-    border-color: @fg0;
-    text-color: @accent;
+element normal.normal, element alternate.normal {
+    background-color:   transparent;
+}
+
+element selected.normal {
+    background-color:   @bg-light;
+    text-color:         @nord-blue;
+    border:             1px;
+    border-color:       @nord-blue;
 }
 
 element-icon {
-    size: 32px; 
-    horizontal-align: 0.5;
+    size:               36px;
+    horizontal-align:   0.5;
+    background-color:   transparent;
 }
 
 element-text {
-    horizontal-align: 0.5;
-    vertical-align: 0.5;
-    text-color: inherit;
+    horizontal-align:   0.5;
+    vertical-align:     0.5;
+    background-color:   transparent;
+    text-color:         @nord-light;
+}
+
+element normal.normal, element alternate.normal {
+    background-color:	transparent;
+    text-color:		@nord-light;
 }

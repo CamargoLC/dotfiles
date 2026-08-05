@@ -1,0 +1,56 @@
+* {
+    bg-dark:            #2e3440;
+    bg-light:           #3b4252;
+    nord-blue:          #81a1c1;
+    nord-light:         #eceff4;
+    
+    font:               "IBM Plex Mono 26"; 
+    background-color:   transparent;
+    text-color:         @nord-light;
+}
+
+window {
+    location:           east;
+    anchor:             east;
+    x-offset:           -20px;
+    y-offset:           0px;
+    width:              125px; 
+    border-radius:      15px;
+    background-color:   @bg-dark;
+    padding:            15px;
+    children:           [ listview ];
+}
+
+listview {
+    columns:            1;
+    lines:              4; 
+    spacing:            15px;
+    cycle:              true;
+    dynamic:            true;
+    layout:             vertical;
+    scrollbar:          false;
+}
+
+mainbox {
+    children:           [ listview ];
+}
+
+element {
+    padding:            22px 0px;
+    border-radius:      15px;
+    background-color:   transparent;
+    children:           [ element-text ];
+}
+
+element selected {
+    background-color:   @bg-light;
+    text-color:         @nord-blue;
+}
+
+element-text {
+    expand:             true;
+    horizontal-align:   0.45;
+    vertical-align:     0.55;
+    background-color:   transparent;
+    text-color:         inherit;
+}

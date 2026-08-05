@@ -8,7 +8,7 @@ super + d
     rofi -show drun
 
 super + shift + e
-    ~/.config/rofi/powermenu.sh
+    /mnt/meu_hd/dotfiles/rofi/powermenu.sh
 
 super + shift + r
     bspc wm -r && pkill -USR1 -x sxhkd

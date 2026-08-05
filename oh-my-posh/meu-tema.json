@@ -11,16 +11,16 @@
           "type": "session",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
-          "background": "#D05E3D",
-          "foreground": "#FFFFFF",
+          "background": "#5E81AC",
+          "foreground": "#ECEFF4",
           "template": "  {{ .UserName }} "
         },
         {
           "type": "path",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
-          "background": "#D79921",
-          "foreground": "#FFFFFF",
+          "background": "#81A1C1",
+          "foreground": "#2E3440",
           "properties": {
             "style": "folder"
           },
@@ -30,16 +30,16 @@
           "type": "text",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
-          "background": "#689D6A",
-          "foreground": "#FFFFFF",
+          "background": "#88C0D0",
+          "foreground": "#2E3440",
           "template": " "
         },
         {
           "type": "time",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
-          "background": "#3C3836",
-          "foreground": "#EBDBB2",
+          "background": "#434C5E",
+          "foreground": "#ECEFF4",
           "properties": {
             "time_format": "15:04"
           },
@@ -56,7 +56,7 @@
           "type": "text",
           "style": "plain",
           "background": "transparent",
-          "foreground": "#98971A",
+          "foreground": "#A3BE8C",
           "template": "➔ "
         }
       ]
