@@ -141,7 +141,7 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
-# abrir o meno power
+# abrir o menu power
 bindsym $mod+Shift+e exec --no-startup-id ~/.config/rofi/powermenu/type-2/powermenu.sh
 
 # move focused container to workspace
@@ -210,10 +210,10 @@ gaps outer 5
 
 bindsym $mod+b exec --no-startup-id librewolf
 
-# Captura de tela inteira (salva silenciosamente no HD com nome automático)
+# Captura de tela inteira
 bindsym Print exec --no-startup-id flameshot full -p /mnt/meu_hd/Screenshots
 
-# Captura de área selecionada (abre a interface para você renomear antes de salvar no HD)
+# Captura de área selecionada
 bindsym Shift+Print exec --no-startup-id flameshot gui
 
 exec --no-startup-id systemctl --user import-environment DISPLAY XAUTHORITY
