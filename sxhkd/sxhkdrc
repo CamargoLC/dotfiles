@@ -1,26 +1,21 @@
-# ==========================================
-# 1. SISTEMA E LANÇADORES
-# ==========================================
 super + Return
     alacritty
 
+# Iniciar o Rofi
 super + d
     rofi -show drun
 
+# Iniciar o Power Menu
 super + shift + e
     /mnt/meu_hd/dotfiles/rofi/powermenu.sh
 
+# Reiniciar ambiente
 super + shift + r
     bspc wm -r && pkill -USR1 -x sxhkd
 
-# ==========================================
-# 2. GERENCIAMENTO DE JANELAS E ESTADOS
-# ==========================================
-# Fechar/Matar janela (Q = Memória i3wm | W = Padrão bspwm)
 super + {shift + q,w,shift + w}
     bspc node -{c,c,k}
 
-# Alternar estados (Tiled, Pseudo, Floating, Fullscreen, Float Toggle)
 super + {t,shift + t,s,f,shift + space}
     bspc node -t {tiled,pseudo_tiled,floating,fullscreen,"~"floating}
 
@@ -32,9 +27,6 @@ super + {m,g}
 super + ctrl + {m,x,y,z}
     bspc node -g {marked,locked,sticky,private}
 
-# ==========================================
-# 3. FOCO E NAVEGAÇÃO (VIM-LIKE & WORKSPACES)
-# ==========================================
 # Focar ou mover janela na direção (H J K L)
 super + {_,shift + }{h,j,k,l}
     bspc node -{f,s} {west,south,north,east}
@@ -57,9 +49,6 @@ super + bracket{left,right}
 super + {grave,Tab}
     bspc {node,desktop} -f last
 
-# ==========================================
-# 4. PRÉ-SELEÇÃO DE ÁREA (SPLITS)
-# ==========================================
 # Direção e Proporção (Ratio)
 super + ctrl + {h,j,k,l}
     bspc node -p {west,south,north,east}
@@ -71,9 +60,6 @@ super + ctrl + {1-9}
 super + ctrl + {_,shift + }space
     {bspc node -p cancel,bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel}
 
-# ==========================================
-# 5. REDIMENSIONAMENTO E MOVIMENTO
-# ==========================================
 # Expandir
 super + alt + {h,j,k,l}
     bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
@@ -86,9 +72,6 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
     bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# ==========================================
-# 6. UTILITÁRIOS E HARDWARE
-# ==========================================
 # Captura de Tela (Flameshot: Inteira / Área de Seleção)
 {_,shift + }Print
     flameshot {full -c,gui}

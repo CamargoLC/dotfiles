@@ -1,32 +1,23 @@
 # ~/.bashrc
 
-# Se não for uma sessão interativa, aborte (Padrão de segurança)
+# Se não for uma sessão interativa, aborte
 [[ $- != *i* ]] && return
 
-# ------------------------------------------------------
-# 1. CONFIGURAÇÕES BÁSICAS DO TERMINAL
-# ------------------------------------------------------
-# Ignorar comandos duplicados ou que começam com espaço no histórico
 HISTCONTROL=ignoreboth
 shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 shopt -s checkwinsize
 
-# ------------------------------------------------------
-# 2. VARIÁVEIS DE AMBIENTE
-# ------------------------------------------------------
 export TERMINAL="alacritty"
 export EDITOR="nvim"
 
-# ------------------------------------------------------
-# 3. ALIASES
-# ------------------------------------------------------
-# Listagem de arquivos
+# Comandos Básicos
 alias ls='ls --color=auto'
 alias ll='ls -l --color=auto'
 alias la='ls -A --color=auto'
 alias l='ls -CF --color=auto'
+alias lla='ls -la'
 
 # Aplicativos
 alias ra='ranger'
@@ -39,7 +30,7 @@ alias ht='htop'
 
 # Conteiner (Gerenciamento Flatpak)
 alias fu='sudo flatpak update'
-alias fuu='sudo flatpak update --user'
+alias fuu='flatpak update --user'
 
 # Void Linux (Gerenciamento XBPS)
 alias xq='sudo xbps-query -Rs'
@@ -52,11 +43,6 @@ alias xro='sudo xbps-remove -Oo' # Remove pacotes órfãos limpando o cache
 alias off='sudo init 0'
 alias reb='sudo reboot'
 
-# ------------------------------------------------------
-# 4. INICIALIZAÇÃO (Scripts executados ao abrir o terminal)
-# ------------------------------------------------------
-# Iniciar o tema do prompt (Oh-My-Posh)
+# Iniciar com o terminal
 eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/meu-tema.json)"
-
-# Exibir informações do sistema no topo
 fastfetch

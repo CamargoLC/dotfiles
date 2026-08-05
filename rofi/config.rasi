@@ -1,13 +1,8 @@
-/**
- * ROFI CONFIGURATION - THE ULTIMATE NORD GRID
- * Motor: Aditya Shakya | Cores: LR-Tech (Nord) | Design: Grid Layout
- **/
-
 configuration {
     modi: "drun,run,window";
     show-icons: true;
     icon-theme: "Papirus";
-    display-drun: ""; /* Ícone de Lupa - requer Nerd Font */
+    display-drun: "";
     drun-display-format: "{name}";
     hover-select: true;
     me-select-entry: "";
@@ -16,7 +11,6 @@ configuration {
 }
 
 * {
-    /* Paleta Nord Tática */
     bg-dark:            #2e3440;
     bg-light:           #3b4252;
     nord-blue:          #81a1c1;
