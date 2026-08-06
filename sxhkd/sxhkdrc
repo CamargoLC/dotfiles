@@ -1,25 +1,76 @@
+# ==========================================
+# GATILHOS DO SISTEMA E APLICATIVOS
+# ==========================================
+
+# Emulador de Terminal
 super + Return
     alacritty
 
-# Iniciar o Rofi
-super + d
+# Lançador de Aplicativos (Rofi)
+super + r
     rofi -show drun
 
-# Iniciar o Power Menu
+# Menu de Energia (Power Menu Customizado)
 super + shift + e
     /mnt/meu_hd/dotfiles/rofi/powermenu.sh
 
-# Reiniciar ambiente
+# Reiniciar ambiente (BSPWM + SXHKD)
 super + shift + r
     bspc wm -r && pkill -USR1 -x sxhkd
 
+# ==========================================
+# DUNST NOTIFICATIONS
+# ==========================================
+
+# Data e Hora
+super + d
+    /mnt/meu_hd/dotfiles/scripts/hora.sh
+
+# Uso de CPU e RAM
+super + i
+    /mnt/meu_hd/dotfiles/scripts/sys_info.sh
+
+# Status da Bateria
+super + b
+    /mnt/meu_hd/dotfiles/scripts/bateria.sh
+
+# Dispensar notificação imediatamente
+super + n
+    dunstctl close
+
+# ==========================================
+# HARDWARE (ÁUDIO E BRILHO)
+# ==========================================
+
+# Aumentar Volume (Fn + Seta Acima)
+XF86AudioRaiseVolume
+    /mnt/meu_hd/dotfiles/scripts/vol_up.sh
+
+# Diminuir Volume (Fn + Seta Abaixo)
+XF86AudioLowerVolume
+    /mnt/meu_hd/dotfiles/scripts/vol_down.sh
+
+# Mutar Volume
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Brilho da Tela (Acer Nitro 5)
+XF86MonBrightness{Up,Down}
+    brightnessctl set {+5%,5%-}
+
+# ==========================================
+# GERENCIAMENTO DE JANELAS
+# ==========================================
+
+# Fechar ou Matar a janela
 super + {shift + q,w,shift + w}
     bspc node -{c,c,k}
 
+# Alternar estados (Tiled, Pseudo-tiled, Floating, Fullscreen)
 super + {t,shift + t,s,f,shift + space}
     bspc node -t {tiled,pseudo_tiled,floating,fullscreen,"~"floating}
 
-# Layout Monocle (Maximizado) / Troca com a maior janela
+# Layout Monocle (Maximizado) / Focar na maior janela
 super + {m,g}
     {bspc desktop -l next,bspc node -s biggest.window}
 
@@ -31,18 +82,18 @@ super + ctrl + {m,x,y,z}
 super + {_,shift + }{h,j,k,l}
     bspc node -{f,s} {west,south,north,east}
 
-# Focar ou mover janela para o Workspace (1-0)
+# Focar ou mover janela para as Áreas de Trabalho (1-0)
 super + {_,shift + }{1-9,0}
     bspc {desktop -f,node -d} '^{1-9,10}'
 
-# Focar em janelas relativas (Próxima/Anterior/Pai/Irmão)
+# Focar em janelas relativas 
 super + {_,shift + }c
     bspc node -f {next,prev}.local.!hidden.window
     
 super + {p,b,comma,period}
     bspc node -f @{parent,brother,first,second}
 
-# Alternar Desktops e Histórico
+# Alternar Áreas de Trabalho e Histórico
 super + bracket{left,right}
     bspc desktop -f {prev,next}.local
 
@@ -56,15 +107,15 @@ super + ctrl + {h,j,k,l}
 super + ctrl + {1-9}
     bspc node -o 0.{1-9}
 
-# Cancelar pré-seleção (Focada / Todas no Desktop)
+# Cancelar pré-seleção
 super + ctrl + {_,shift + }space
     {bspc node -p cancel,bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel}
 
-# Expandir
+# Expandir Janelas
 super + alt + {h,j,k,l}
     bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
-# Contrair
+# Contrair Janelas
 super + alt + shift + {h,j,k,l}
     bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
@@ -72,17 +123,14 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
     bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# Captura de Tela (Flameshot: Inteira / Área de Seleção)
-{_,shift + }Print
-    flameshot {full -c,gui}
+# ==========================================
+# CAPTURA DE TELA (FLAMESHOT)
+# ==========================================
 
-# Controle de Áudio
-XF86Audio{Raise,Lower}Volume
-    pactl set-sink-volume @DEFAULT_SINK@ {+5%,-5%}
+# Print tela inteira
+Print
+    flameshot full -p /mnt/meu_hd/Screenshots && sleep 1 && pkill -x flameshot
 
-XF86AudioMute
-    pactl set-sink-mute @DEFAULT_SINK@ toggle
-
-# Brilho da Tela (Acer Nitro 5)
-XF86MonBrightness{Up,Down}
-    brightnessctl set {+5%,5%-}
+# Print com interface de seleção (recorte guiado)
+shift + Print
+    flameshot gui
