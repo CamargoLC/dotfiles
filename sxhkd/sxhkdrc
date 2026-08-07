@@ -10,13 +10,17 @@ super + Return
 super + r
     rofi -show drun
 
-# Menu de Energia (Power Menu Customizado)
+# Menu de Energia (Power Menu)
 super + shift + e
     /mnt/meu_hd/dotfiles/rofi/powermenu.sh
 
-# Reiniciar ambiente (BSPWM + SXHKD)
-super + shift + r
-    bspc wm -r && pkill -USR1 -x sxhkd
+# Reiniciar o bspwm / Sair do bspwm
+super + alt + {r,q}
+    bspc {wm -r,quit}
+
+# Recarregar as configurações de atalho (sxhkd)
+super + Escape
+    pkill -USR1 -x sxhkd
 
 # ==========================================
 # DUNST NOTIFICATIONS
@@ -54,7 +58,7 @@ XF86AudioLowerVolume
 XF86AudioMute
     pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-# Brilho da Tela (Acer Nitro 5)
+# Brilho da Tela
 XF86MonBrightness{Up,Down}
     brightnessctl set {+5%,5%-}
 
@@ -62,9 +66,9 @@ XF86MonBrightness{Up,Down}
 # GERENCIAMENTO DE JANELAS
 # ==========================================
 
-# Fechar ou Matar a janela
-super + {shift + q,w,shift + w}
-    bspc node -{c,c,k}
+# Fechar (w) ou Matar a janela à força (shift + w)
+super + {_,shift + }w
+    bspc node -{c,k}
 
 # Alternar estados (Tiled, Pseudo-tiled, Floating, Fullscreen)
 super + {t,shift + t,s,f,shift + space}

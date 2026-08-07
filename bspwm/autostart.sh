@@ -5,3 +5,4 @@ picom --backend glx -b &
 # ~/.config/polybar/launch.sh &
 nm-applet &
 setxkbmap br &
+pulseaudio --start &
