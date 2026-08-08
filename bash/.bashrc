@@ -16,8 +16,6 @@ export EDITOR="nvim"
 alias ls='ls --color=auto'
 alias ll='ls -l --color=auto'
 alias la='ls -A --color=auto'
-alias l='ls -CF --color=auto'
-alias lla='ls -la'
 
 # Aplicativos
 alias ra='ranger'
@@ -26,7 +24,6 @@ alias ff='fastfetch'
 alias ma='cmatrix -b -C cyan'
 alias ttc='tty-clock -b -c -C 4'
 alias bt='btop'
-alias ht='htop'
 
 # Conteiner (Gerenciamento Flatpak)
 alias fu='sudo flatpak update'
