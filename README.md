@@ -22,4 +22,4 @@ Welcome at my Void.
 
 ![Btop, cmatrix e fastfetch](assets/screenshots/ricing_void2.png)
 
-![Theme nvim e arquivo bashrc](assets/screenshots/ricing_void3.png)
+![Theme nvim e arquivo bashrc](assets/screenshots/rincing_void3.png)
