@@ -3,13 +3,12 @@
 Welcome at my Void.
 
 ## 💻 Configuração
-* **Window Manager:** i3wm ou bspwm
+* **Window Manager:** bspwm
 * **Terminal:** alacritty
 * **Shell:** bash + oh-my-posh (shell prompt para o terminal)
 * **Editor:** neovim
 * **Launcher / Powermenu:** rofi
 * **Compositor:** picom
-* **Barra de status:** polybar
 * **Teclas de atalho:** sxhkd
 * **Wallpaper Manager:** feh
 * **Informações do Sistema:** fastfetch + btop
