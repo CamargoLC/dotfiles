@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+DIR_VOID="$HOME/void-packages"
+DIR_SRCPKGS="$DIR_VOID/srcpkgs"
+
+pkg="$(ls -1 "$DIR_SRCPKGS" | rofi -dmenu -i -p "Src-Packages: ")"
+[[ -z "$pkg" ]] && exit 0
+
+if xbps-query "$pkg" >/dev/null 2>&1; then
+    notify-send "Cancelado" "'$pkg' já está instalado no sistema."
+    exit 0
+fi
+
+if [[ -d "$DIR_SRCPKGS/$pkg" ]]; then
+    notify-send "Compilando" "Acompanhe '$pkg' no terminal."
+    
+    alacritty -e bash -c "
+        cd '$DIR_VOID' || exit
+        git pull
+        
+        ./xbps-src pkg '$pkg'
+        
+        if [ \$? -eq 0 ]; then
+            sudo xbps-install --repository hostdir/binpkgs '$pkg'
+            notify-send 'Sucesso' 'O pacote $pkg foi instalado.'
+        else
+            notify-send 'Erro' 'A compilação de $pkg falhou.'
+        fi
+        
+        read -p 'Pressione [ENTER] para fechar...'
+    "
+else
+    notify-send "Erro" "Pacote '$pkg' não encontrado."
+    exit 1
+fi
