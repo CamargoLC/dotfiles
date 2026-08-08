@@ -17,8 +17,6 @@ Welcome at my Void.
 
 ## Screenshots do Sistema (Void Linux + bspwm)
 
-![Visão geral do desktop e navegador + cava e ranger](assets/screenshots/ricing_void1.png)
-
 ![Btop, cmatrix e fastfetch](assets/screenshots/ricing_void2.png)
 
 ![Theme nvim e arquivo bashrc](assets/screenshots/rincing_void3.png)
