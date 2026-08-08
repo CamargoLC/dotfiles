@@ -18,10 +18,8 @@ Welcome at my Void.
 
 ## Screenshots do Sistema (Void Linux + bspwm)
 
-![Visão geral do desktop e navegador](assets/screenshots/rice_voidlinux1.png)
+![Visão geral do desktop e navegador + cava e ranger](assets/screenshots/ricing_void1.png)
 
-![Monitoramento de sistema com btop e tty-clock](assets/screenshots/rice_voidlinux2.png)
+![Btop, cmatrix e fastfetch](assets/screenshots/ricing_void2.png)
 
-![Fastfetch e Gerenciador de Arquivos](assets/screenshots/rice_voidlinux3_att.png)
-
-![Configurações do terminal no Neovim](assets/screenshots/rice_voidlinux4.png)
+![Theme nvim e arquivo bashrc](assets/screenshots/ricing_void3.png)

@@ -35,7 +35,7 @@ alias fuu='flatpak update --user'
 # Void Linux (Gerenciamento XBPS)
 alias xq='sudo xbps-query -Rs'
 alias xu='sudo xbps-install -Su'
-alias xi='sudo xbps-install -S'
+alias xl='sudo xbps-install -S'
 alias xr='sudo xbps-remove -R'
 alias xro='sudo xbps-remove -Oo' # Remove pacotes órfãos limpando o cache
 
