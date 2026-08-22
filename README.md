@@ -4,7 +4,7 @@ Welcome at my Void.
 
 ## 💻 Configuração
 * **Window Manager:** bspwm
-* **Terminal:** alacritty
+* **Terminal:** st
 * **Shell:** bash + oh-my-posh (shell prompt para o terminal)
 * **Editor:** neovim
 * **Launcher / Powermenu:** rofi
