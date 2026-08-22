@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 lock=""
-logout=""
-reboot=""
-shutdown=""
+logout="󰍃"
+reboot="󰜉"
+shutdown="⏻"
 
 options="$lock\n$logout\n$reboot\n$shutdown"
 
@@ -25,12 +25,12 @@ confirm_action() {
 case $chosen in
     $shutdown)
         if confirm_action; then
-            alacritty -e sudo init 0
+            st -e sudo init 0
         fi
         ;;
     $reboot)
         if confirm_action; then
-            alacritty -e sudo reboot
+            st -e sudo reboot
         fi
         ;;
     $lock)

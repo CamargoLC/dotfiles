@@ -4,7 +4,7 @@
 
 # Emulador de Terminal
 super + Return
-    alacritty
+    st
 
 # Lançador de Aplicativos (Rofi)
 super + r

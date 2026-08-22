@@ -14,7 +14,7 @@ fi
 if [[ -d "$DIR_SRCPKGS/$pkg" ]]; then
     notify-send "Compilando" "Acompanhe '$pkg' no terminal."
     
-    alacritty -e bash -c "
+    st -e bash -c "
         cd '$DIR_VOID' || exit
         git pull
         

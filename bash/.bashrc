@@ -9,7 +9,8 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 shopt -s checkwinsize
 
-export TERMINAL="alacritty"
+export TERMINAL="st"
+export COLORTERM="truecolor"
 export EDITOR="nvim"
 
 # Comandos Básicos
@@ -28,6 +29,7 @@ alias bt='btop'
 # Conteiner (Gerenciamento Flatpak)
 alias fu='sudo flatpak update'
 alias fuu='flatpak update --user'
+export BROWSER="flatpak run io.gitlab.librewolf-community"
 
 # Void Linux (Gerenciamento XBPS)
 alias xq='sudo xbps-query -Rs'
@@ -41,5 +43,5 @@ alias off='sudo init 0'
 alias reb='sudo reboot'
 
 # Iniciar com o terminal
-eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/meu-tema.json)"
 fastfetch
+eval "$(oh-my-posh init bash --config /mnt/meu_hd/dotfiles/oh-my-posh/nord-minimal.omp.json)"
