@@ -17,10 +17,12 @@ export EDITOR="nvim"
 alias ls='ls --color=auto'
 alias ll='ls -l --color=auto'
 alias la='ls -A --color=auto'
+alias bashrc='nvim ~/.bashrc'
 
 # Aplicativos
 alias ra='ranger'
 alias vim='nvim'
+alias vi='nvim'
 alias ff='fastfetch'
 alias ma='cmatrix -b -C cyan'
 alias ttc='tty-clock -b -c -C 4'

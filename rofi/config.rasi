@@ -1,103 +1,75 @@
 configuration {
     modi: "drun,run,window";
-    show-icons: true;
-    icon-theme: "Papirus";
-    display-drun: "";
-    drun-display-format: "{name}";
-    hover-select: true;
-    me-select-entry: "";
-    me-accept-entry: "MousePrimary";
-    window-format: "{w} · {c} · {t}";
+    font: "JetBrains Mono 10";
+    show-icons: false;
 }
 
+@theme "/dev/null"
+
 * {
-    bg-dark:            #2e3440;
-    bg-light:           #3b4252;
-    nord-blue:          #81a1c1;
-    nord-light:         #eceff4;
-    nord-grey:          #d8dee9;
-    
-    font:               "IBM Plex Mono 11";
-    background-color:   transparent;
-    text-color:		#ffffff;
+    bg: #000000CC;
+    bg-alt: #000000CC;
+    fg: #eeeeee;
+    accent: #b8bb26;
+    disabled: #555555;
+
+    background-color: transparent;
+    text-color: @fg;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
 }
 
 window {
-    width:              360px;
-    border:             2px;
-    border-color:       @nord-blue;
-    border-radius:      15px;
-    background-color:   @bg-dark;
-    padding:            15px;
+    background-color: @bg;
+    width: 40%;
+    height: 40%;
+    border: 2px;
+    border-color: @accent;
+    padding: 10px;
 }
 
 mainbox {
-    spacing:            20px;
-    children:           [ inputbar, listview ];
+    background-color: transparent;
 }
 
 inputbar {
-    spacing:            15px;
-    padding:            15px 20px;
-    border-radius:      15px;
-    background-color:   @bg-light;
-    text-color:         @nord-light;
-    children:           [ prompt, entry ];
-}
-
-prompt {
-    text-color:         @nord-blue;
-    vertical-align:     0.5;
-    font:               "IBM Plex Mono 14";
+    background-color: transparent;
+    children: [entry];
+    /* Set horizontal padding to 0px so 'entry' aligns directly with list elements below */
+    padding: 6px 0px;
 }
 
 entry {
-    placeholder:        "Buscar Aplicações...";
-    placeholder-color:  @nord-grey;
-    text-color:         @nord-light;
-    vertical-align:     0.5;
+    background-color: transparent;
+    placeholder: "Search...";
+    placeholder-color: @disabled;
+    /* 14px left padding matches element padding (14px) exactly */
+    padding: 0px 14px;
 }
 
 listview {
-    columns:            3;
-    lines:              3;
-    spacing:            10px;
-    fixed-height:       true;
-    fixed-columns:      true;
+    background-color: transparent;
+    dynamic: true;
+    lines: 8;
+    columns: 1;
+    padding: 10px 0px 0px 0px;
+    spacing: 10px;
 }
 
 element {
-    orientation:        vertical;
-    padding:            10px 5px;
-    border-radius:      10px;
-    text-color:         @nord-light;
-}
-
-element normal.normal, element alternate.normal {
-    background-color:   transparent;
-}
-
-element selected.normal {
-    background-color:   @bg-light;
-    text-color:         @nord-blue;
-    border:             1px;
-    border-color:       @nord-blue;
-}
-
-element-icon {
-    size:               36px;
-    horizontal-align:   0.5;
-    background-color:   transparent;
+    background-color: transparent;
+    /* 3px top/bottom + ~14px font height = 20px selector box */
+    padding: 3px 14px; 
 }
 
 element-text {
-    horizontal-align:   0.5;
-    vertical-align:     0.5;
-    background-color:   transparent;
-    text-color:         @nord-light;
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
 }
 
-element normal.normal, element alternate.normal {
-    background-color:	transparent;
-    text-color:		@nord-light;
+element selected {
+    background-color: @accent;
+    text-color: #ffffff;
 }

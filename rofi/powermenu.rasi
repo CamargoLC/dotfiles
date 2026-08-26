@@ -1,12 +1,11 @@
 * {
-    bg-dark:            #2e3440;
-    bg-light:           #3b4252;
-    nord-blue:          #81a1c1;
-    nord-light:         #eceff4;
+    bg:                 #000000CC;
+    fg:                 #ffffff;
+    accent:             #b8bb26;
     
     font:               "IBM Plex Mono 26"; 
     background-color:   transparent;
-    text-color:         @nord-light;
+    text-color:         @fg;
 }
 
 window {
@@ -15,8 +14,9 @@ window {
     x-offset:           -20px;
     y-offset:           0px;
     width:              125px; 
-    border-radius:      15px;
-    background-color:   @bg-dark;
+    border:             2px;
+    border-color:       @accent;
+    background-color:   @bg;
     padding:            15px;
     children:           [ listview ];
 }
@@ -37,14 +37,13 @@ mainbox {
 
 element {
     padding:            22px 0px;
-    border-radius:      15px;
     background-color:   transparent;
     children:           [ element-text ];
 }
 
 element selected {
-    background-color:   @bg-light;
-    text-color:         @nord-blue;
+    background-color:   @accent;
+    text-color:         #ffffff;
 }
 
 element-text {

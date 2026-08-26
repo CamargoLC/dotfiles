@@ -8,43 +8,24 @@
       "segments": [
         {
           "type": "text",
-          "style": "powerline",
-          "powerline_symbol": "",
-          "foreground": "#ffffff",
-          "background": "#15181e",
-          "template": " "
-        },
-        {
-          "type": "text",
-          "style": "powerline",
-          "powerline_symbol": "",
-          "foreground": "#ffffff",
-          "background": "#81a1c1",
-          "template": "  {{ .UserName }} "
+          "style": "plain",
+          "foreground": "#b8bb26",
+          "template": " "
         },
         {
           "type": "path",
-          "style": "powerline",
-          "powerline_symbol": "",
-          "foreground": "#eceff4",
-          "background": "#4c566a",
+          "style": "plain",
+          "foreground": "#fbf1c7",
           "properties": {
             "style": "folder"
           },
-          "template": " {{ .Path }} "
-        }
-      ]
-    },
-    {
-      "type": "prompt",
-      "alignment": "left",
-      "newline": true,
-      "segments": [
+          "template": "{{ .Path }} "
+        },
         {
           "type": "text",
           "style": "plain",
-          "foreground": "#a3be8c",
-          "template": "➜ "
+          "foreground": "#fbf1c7",
+          "template": ">_ "
         }
       ]
     }

@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrainsMono Nerd Font:style=Regular:size=14:antialias=true:autohint=true, monospace:size=9";
+static char *font = "JetBrainsMono Nerd Font:style=Regular:size=16:antialias=true:autohint=true, monospace:size=9";
 /* Spare fonts */
 static char *font2[] = {
 /*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
@@ -221,13 +221,13 @@ static Shortcut shortcuts[] = {
     { TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
     
     /* Scroll */
-    { ShiftMask, XK_plus,       kscrollup,      {.i = 1} }, 
-    { ShiftMask, XK_underscore, kscrolldown,    {.i = 1} },
-    { ShiftMask, XK_parenright, kscrolldown,    {.i = 10000} },
-    { ShiftMask, XK_Up,         kscrollup,      {.i = 1} },
-    { ShiftMask, XK_Down,       kscrolldown,    {.i = 1} },
-    { ShiftMask, XK_Page_Up,    kscrollup,      {.i = -1} },
-    { ShiftMask, XK_Page_Down,  kscrolldown,    {.i = -1} },
+    { MODKEY|ShiftMask, XK_plus,       kscrollup,      {.i = 1} },
+    { MODKEY|ShiftMask, XK_underscore, kscrolldown,    {.i = 1} },
+    { MODKEY|ShiftMask, XK_parenright, kscrolldown,    {.i = 10000} },
+    { ShiftMask,        XK_Up,         kscrollup,      {.i = 1} },
+    { ShiftMask,        XK_Down,       kscrolldown,    {.i = 1} },
+    { ShiftMask,        XK_Page_Up,    kscrollup,      {.i = -1} },
+    { ShiftMask,        XK_Page_Down,  kscrolldown,    {.i = -1} },
 
 };
 

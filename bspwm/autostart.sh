@@ -5,3 +5,5 @@ picom --backend glx -b &
 nm-applet &
 setxkbmap br &
 pulseaudio --start &
+~/.config/polybar/launch.sh &
+nitrogen --restore &
