@@ -21,4 +21,6 @@ bspc config presel_feedback_color "#b8bb26"
 
 bspc config focus_follows_pointer true
 
+bspc rule -a Nuclear-music-player state=tiled layer=normal
+
 ~/.config/bspwm/autostart.sh &

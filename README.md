@@ -9,6 +9,7 @@ Welcome at my Void.
 * **Editor:** neovim
 * **Launcher / Powermenu:** rofi
 * **Compositor:** picom
+* **Barra de Status:** polybar
 * **Teclas de atalho:** sxhkd
 * **Wallpaper Manager:** feh e nitrogen
 * **Informações do Sistema:** fastfetch + btop
