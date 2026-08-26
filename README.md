@@ -5,12 +5,12 @@ Welcome at my Void.
 ## 💻 Configuração
 * **Window Manager:** bspwm
 * **Terminal:** st
-* **Shell:** bash + oh-my-posh (shell prompt para o terminal)
+* **Shell:** zsh + oh-my-posh (shell prompt para o terminal)
 * **Editor:** neovim
 * **Launcher / Powermenu:** rofi
 * **Compositor:** picom
 * **Teclas de atalho:** sxhkd
-* **Wallpaper Manager:** feh
+* **Wallpaper Manager:** feh e nitrogen
 * **Informações do Sistema:** fastfetch + btop
 
 > "Enter into the Void."
