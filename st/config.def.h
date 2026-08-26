@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrainsMono Nerd Font:style=Regular:size=16:antialias=true:autohint=true, monospace:size=9";
+static char *font = "Hack Nerd Font:pixelsize=22:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
 /*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
@@ -106,7 +106,7 @@ static const char *colorname[] = {
     /* 8 normal colors (Gruvbox) */
     [0] = "#282828", /* black   */
     [1] = "#cc241d", /* red     */
-    [2] = "#98971a", /* green   */
+    [2] = "#b8bb26", /* green   */
     [3] = "#fabd2f", /* yellow  */
     [4] = "#458588", /* blue    */
     [5] = "#b16286", /* magenta */
