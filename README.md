@@ -23,4 +23,6 @@ Welcome at my Void.
 
 ![Btopm, cmatrix e fastfetch](assets/screenshots/rice2.png)
 
-![Cava e nuclear](assets/screenshots/rice3.png)
+![Cava, ttc-clock e nuclear](assets/screenshots/rice4.1.png)
+
+![Nvim, ranger e zsh](assets/screenshots/rice5.png)
