@@ -1,75 +1,102 @@
-configuration {
-    modi: "drun,run,window";
-    font: "JetBrains Mono 10";
-    show-icons: false;
+/* Non-minimalist Rofi configuration for Void Linux */
+* {
+    font: "Figtree 13";
+    bg-color: #000000FF;
+    fg-color: #FFFFFFFF;
+    accent-color: #b8bb26FF; /* Green accent */
+    wbg-color: #000000CC; /* Window background */
+    item-bg: #1d2021FF; /* Normal items bg */
+    alt-bg: #282828FF; /* Alternate items bg */
+    sel-bg: #b8bb26FF; /* Selected item green bg */
+    sel-fg: #1d2021FF; /* Selected item dark fg */
+    b-radius: 8px;
+    g-spacing: 12px; /* Increased gaps */
+    w-border: 2px solid; /* Thicker borders */
+    w-border-color: #b8bb26FF; /* Accent border color */
+    w-padding: 16px;
+    w-transparency: "real";
 }
 
-@theme "/dev/null"
-
-* {
-    bg: #000000CC;
-    bg-alt: #000000CC;
-    fg: #eeeeee;
-    accent: #b8bb26;
-    disabled: #555555;
-
-    background-color: transparent;
-    text-color: @fg;
-    margin: 0;
-    padding: 0;
-    spacing: 0;
+configuration {
+    modi: "drun";
+    show-icons: true;
+    display-drun: "";
 }
 
 window {
-    background-color: @bg;
-    width: 40%;
-    height: 40%;
-    border: 2px;
-    border-color: @accent;
-    padding: 10px;
-}
-
-mainbox {
-    background-color: transparent;
+    transparency: @w-transparency;
+    width: 450px;
+    border-radius: @b-radius;
+    background-color: @wbg-color;
+    border: @w-border;
+    border-color: @w-border-color;
+    padding: @w-padding;
 }
 
 inputbar {
-    background-color: transparent;
-    children: [entry];
-    /* Set horizontal padding to 0px so 'entry' aligns directly with list elements below */
-    padding: 6px 0px;
+    children: ["prompt", "entry"];
+    spacing: 12px;
+    background-color: #1a1a1aFF; /* Dark grey for inputbar */
+    border: 2px solid;
+    border-color: #b8bb26FF;
+    border-radius: 8px;
+    padding: 12px;
 }
 
-entry {
-    background-color: transparent;
-    placeholder: "Search...";
-    placeholder-color: @disabled;
-    /* 14px left padding matches element padding (14px) exactly */
-    padding: 0px 14px;
+mainbox {
+    spacing: 12px;
+    padding: 10px;
+    children: ["inputbar", "listview", "message"];
 }
 
 listview {
-    background-color: transparent;
-    dynamic: true;
-    lines: 8;
     columns: 1;
-    padding: 10px 0px 0px 0px;
-    spacing: 10px;
+    lines: 7;
+    fixed-height: true;
+    fixed-columns: true;
+    cycle: false;
+    scrollbar: false;
+    spacing: 12px;
+    border: 0px solid;
 }
 
 element {
-    background-color: transparent;
-    /* 3px top/bottom + ~14px font height = 20px selector box */
-    padding: 3px 14px; 
+    spacing: 12px;
+    padding: 12px;
+    border: 1px solid;
+    border-color: #282828FF; /* Grey border for items */
+    border-radius: 8px;
+    background-color: #1a1a1aFF; /* Default grey bg */
+    text-color: #FFFFFFFF;
 }
 
-element-text {
+element normal.normal {
     background-color: transparent;
-    text-color: inherit;
-    vertical-align: 0.5;
+    text-color: #FFFFFFFF;
 }
 
-element selected {
-    background-color: @accent;
-    text-color: #ffffff;
+element alternate.normal {
+    background-color: #282828FF; /* Solid bg for alternate */
+    text-color: #FFFFFFFF;
+}
+
+element selected.active, element selected.normal {
+    background-color: #b8bb26FF; /* Rich green background */
+    text-color: #1d2021FF; /* Dark contrasting text */
+    border-color: #FFFFFFFF; /* White inner border for highlight */
+}
+
+message {
+    background-color: red;
+    border: 0px solid;
+}
+
+prompt {
+    text-color: #FFFFFFFF;
+}
+
+entry {
+    text-color: #FFFFFFFF;
+    placeholder: "Search Apps";
+    placeholder-color: #888888FF;
 }
