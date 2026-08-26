@@ -24,7 +24,7 @@ alias vim='nvim'
 alias vi='nvim'
 alias ff='fastfetch'
 alias ma='cmatrix'
-alias ttc='tty-clock -b -c -C 4'
+alias ttc='tty-clock -b -c -C 2 -B'
 alias bt='btop'
 
 # Conteiner (Gerenciamento Flatpak)

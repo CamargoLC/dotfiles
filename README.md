@@ -13,11 +13,14 @@ Welcome at my Void.
 * **Teclas de atalho:** sxhkd
 * **Wallpaper Manager:** feh e nitrogen
 * **Informações do Sistema:** fastfetch + btop
+* **Explorador de arquivos:** ranger
 
 > "Enter into the Void."
 
 ## Screenshots do Sistema (Void Linux + bspwm)
 
-![Btop, cmatrix e fastfetch](assets/screenshots/ricing_void2.png)
+![Wallpaper e polybar](assets/screenshots/rice1.png)
 
-![Theme nvim e arquivo bashrc](assets/screenshots/rincing_void3.png)
+![Btopm, cmatrix e fastfetch](assets/screenshots/rice2.png)
+
+![Cava e nuclear](assets/screenshots/rice3.png)
