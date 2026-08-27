@@ -38,7 +38,7 @@ alias xq='sudo xbps-query -Rs'
 alias xu='sudo xbps-install -Su'
 alias xl='sudo xbps-install -S'
 alias xr='sudo xbps-remove -R'
-alias xro='sudo xbps-remove -Oo' # Remove pacotes órfãos limpando o cache
+alias xro='sudo xbps-remove -Oo'
 
 # Sistema
 alias off='sudo init 0'

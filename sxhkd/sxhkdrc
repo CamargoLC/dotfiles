@@ -35,7 +35,7 @@ super + i
     /mnt/meu_hd/dotfiles/scripts/sys_info.sh
 
 # Status da Bateria
-super + b
+super + shift + b
     /mnt/meu_hd/dotfiles/scripts/bateria.sh
 
 # Dispensar notificação imediatamente
@@ -47,20 +47,24 @@ super + n
 # ==========================================
 
 # Aumentar Volume (Fn + Seta Acima)
-XF86AudioRaiseVolume
+ctrl + alt + Up
     /mnt/meu_hd/dotfiles/scripts/vol_up.sh
 
 # Diminuir Volume (Fn + Seta Abaixo)
-XF86AudioLowerVolume
+ctrl + alt + Down
     /mnt/meu_hd/dotfiles/scripts/vol_down.sh
 
-# Mutar Volume
-XF86AudioMute
-    pactl set-sink-mute @DEFAULT_SINK@ toggle
+# Mutar e Desmutar Volume (Toggle)
+ctrl + alt + 0
+    pamixer -t
 
-# Brilho da Tela
-XF86MonBrightness{Up,Down}
-    brightnessctl set {+5%,5%-}
+# Aumentar Brilho da Tela
+ctrl + alt + Right
+    brightnessctl set +5%
+
+# Diminuir Brilho da Tela
+ctrl + alt + Left
+    brightnessctl set 5%-
 
 # ==========================================
 # GERENCIAMENTO DE JANELAS
