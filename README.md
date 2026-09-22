@@ -18,10 +18,12 @@ Welcome at my Void.
 
 ## Screenshots do Sistema (Void Linux + dwm)
 
-![Wallpaper e polybar](assets/screenshots/rice1.png)
+![Visão geral do sistema](assets/screenshots/2026-09-22_14-26-19_scrot.png)
 
-![Btopm, cmatrix e fastfetch](assets/screenshots/rice2.png)
+![Terminal st](assets/screenshots/2026-09-22_14-26-33_scrot.png)
 
-![Cava, ttc-clock e nuclear](assets/screenshots/rice4.1.png)
+![Rmpc, ttclok e cmatrix](assets/screenshots/2026-09-22_14-26-38_scrot.png)
 
-![Nvim, ranger e zsh](assets/screenshots/rice5.png)
+![Nvim, ranger e zsh](assets/screenshots/2026-09-22_14-26-44_scrot.png)
+
+![Btop](asssts/screenshots/2026-09-22_14-26-51_scrot.png)
