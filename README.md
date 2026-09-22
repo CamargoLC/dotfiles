@@ -26,4 +26,4 @@ Welcome at my Void.
 
 ![Nvim, ranger e zsh](assets/screenshots/2026-09-22_14-26-44_scrot.png)
 
-![Btop](asssts/screenshots/2026-09-22_14-26-51_scrot.png)
+![Btop](assets/screenshots/2026-09-22_14-26-51_scrot.png)
