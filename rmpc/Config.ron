@@ -1,0 +1,61 @@
+#![enable(implicit_some)]
+#![enable(unwrap_newtypes)]
+#![enable(unwrap_variant_newtypes)]
+ConfigFile(
+    address: "/tmp/mpd_socket",
+    cache_dir: "/mnt/meu_hd/Musicas/YouTube",
+    theme: "dwm",
+    on_song_change: ["~/.config/rmpc/notify.sh"],
+    volume_step: 5,
+    album_art: (
+        method: UeberzugX11,
+        max_size_px: (width: 850, height: 850),
+        vertical_align: Center,
+        horizontal_align: Center,
+        disabled_protocols: ["http://", "https://"],
+    ),
+    search: (
+        case_sensitive: false,
+        mode: Contains,
+        youtube_enabled: true,
+	tags: [
+         (value: "any",         label: "Any Tag"),
+         (value: "title",       label: "Title"),
+         (value: "album",       label: "Album"),
+         (value: "artist",      label: "Artist"),
+         (value: "albumartist", label: "Feat."),
+         (value: "filename",    label: "Filename"),
+         (value: "genre",       label: "Genre"),
+        ],
+    ),
+    cava: (
+        input: (
+            method: Fifo,
+            source: "/tmp/mpd.fifo",
+            sample_rate: 44100,
+            channels: 2,
+            sample_bits: 16,
+        )
+    ),
+    tabs: [
+        (
+            name: "Queue",
+            pane: Split(
+                direction: Horizontal,
+                panes: [
+                    (size: "70%", pane: Split(
+                        direction: Vertical,
+                        panes: [
+                            (size: "70%", pane: Pane(Queue)),
+                            (size: "30%", pane: Pane(Cava)),
+                        ]
+                    )),
+                    (size: "30%", pane: Pane(AlbumArt)),
+                ],
+            ),
+        ),
+        (name: "Directories", pane: Pane(Directories)),
+        (name: "Search", pane: Pane(Search)),
+        (name: "Playlists", pane: Pane(Playlists)),
+    ],
+)

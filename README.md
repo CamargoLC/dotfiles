@@ -3,21 +3,20 @@
 Welcome at my Void.
 
 ## 💻 Configuração
-* **Window Manager:** bspwm
+* **Window Manager:** dwm
 * **Terminal:** st
 * **Shell:** zsh + oh-my-posh (shell prompt para o terminal)
 * **Editor:** neovim
-* **Launcher / Powermenu:** rofi
+* **Launcher / Powermenu:** dmenu
 * **Compositor:** picom
-* **Barra de Status:** polybar
-* **Teclas de atalho:** sxhkd
+* **Barra de Status:** dwmblocks
 * **Wallpaper Manager:** feh e nitrogen
 * **Informações do Sistema:** fastfetch + btop
 * **Explorador de arquivos:** ranger
 
 > "Enter into the Void."
 
-## Screenshots do Sistema (Void Linux + bspwm)
+## Screenshots do Sistema (Void Linux + dwm)
 
 ![Wallpaper e polybar](assets/screenshots/rice1.png)
 

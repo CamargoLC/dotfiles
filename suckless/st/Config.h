@@ -125,11 +125,11 @@ static const char *colorname[] = {
 
     [255] = 0,
 
-    /* cores de fundo e texto padrao */
-    [256] = "#fbf1c7", /* default foreground (texto) */
-    [257] = "#1d2021", /* default reverse cursor (anti-crash) */
-    [258] = "#fbf1c7", /* default cursor */
-    [259] = "#1d2021", /* default background (fundo) */
+    /* Cores padrão */
+    [256] = "#fbf1c7", /* foreground */
+    [257] = "#000000", /* reverse cursor */
+    [258] = "#FFFFFF", /* cursor brilhante */
+    [259] = "#000000", /* background preto puro */
 };
 /*
  * Default colors (colorname index)
